@@ -1,26 +1,55 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
+import DragSort from './DragSort'
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  
+  constructor(props) {
+    super(props);
+    this.state = {
+      list: [{name: 'title'},{name: 'name'},{name: 'code'},{name: 'email'}, {name: 'lala'}, {name: 'olol'}],
+    }
+  }
+
+  handleDragMove = (data, from, to) => {
+    console.log(data);
+  }
+
+  handleDragEnd = () => {
+   
+  }
+
+  renderRowItem = (item, index) => {
+    return (
+      <div
+        style={{
+          height: '35px',
+          lineHeight: '30px',
+          backgroundColor: '#eee',
+          margin: '10px'
+        }}
+        key={item.name}
+      >{item.name}</div>)
+  }
+
+  render() {
+    return (
+      <div>
+        <h3>react-drag</h3>
+  
+        <DragSort
+          onDragEnd={this.handleDragEnd}
+          onChange={this.handleDragMove}
+          data={this.state.list}
+          renderRowItem={this.renderRowItem}
+          activeColor='#e6f7ff'
+        />
+      </div>
+    )
+  }
+  
 }
 
 export default App;
+
+
