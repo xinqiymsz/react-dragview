@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import DragSort from './DragSort'
-import './App.css';
 
 class App extends Component {
   
