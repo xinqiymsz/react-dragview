@@ -6,7 +6,14 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      list: [{name: 'title'},{name: 'name'},{name: 'code'},{name: 'email'}, {name: 'lala'}, {name: 'olol'}],
+      list: [
+        {val: 'apple'},
+        {val: 'banana'},
+        {val: 'pear'},
+        {val: 'orange'},
+        {val: 'tomato'},
+        {val: 'test'}
+      ],
     }
   }
 
@@ -27,8 +34,8 @@ class App extends Component {
           backgroundColor: '#eee',
           margin: '10px'
         }}
-        key={item.name}
-      >{item.name}</div>)
+        key={item.val}
+      >{item.val}</div>)
   }
 
   render() {

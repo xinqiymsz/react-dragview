@@ -52,7 +52,7 @@ class DragSort extends React.Component {
 
   render() {
     const { data } = this.state;
-    const { renderRowItem, activeStyle } = this.props;
+    const { renderRowItem } = this.props;
     return (
       <div>
         {data.map((item, index) => {
